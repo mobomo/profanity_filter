@@ -1,0 +1,6 @@
+sqlite:
+  :adapter: sqlite
+  :dbfile: profanity_filter.sqlite.db
+sqlite3:
+  :adapter: sqlite3
+  :dbfile: profanity_filter.sqlite3.db

@@ -5,7 +5,7 @@ This plugin will allow you to filter profanity using basic replacement or a dict
 
 
 Disclaimer
-==========
+=========
 
 This plugin is provided as is - therefore, the creators and contributors of this plugin are not responsible for any damages that may result from it's usage.  Use at your own risk; backup your data.
 
@@ -24,13 +24,16 @@ You can use it in your models:
     profanity_filter :foo, :bar, :method => 'dictionary'
       # banned words will have their vowels replaced
 
+    The non-destructive profanity_filter provides different versions of the filtered attribute:
+      some_model.foo => 'filtered version'
+      some_model.foo_original => 'non-filtered version'
+
   Destructive (saves the filtered content to the database)
 
     profanity_filter! :foo, :bar
       # banned words will be replaced with @#$%
     profanity_filter! :foo, :bar, :method => 'dictionary'
       # banned words will have their vowels replaced
-
 
 You can also use the filter directly:
 

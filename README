@@ -41,6 +41,15 @@ You can also use the filter directly:
   ProfanityFilter::Base.clean(text, 'dictionary')
 
 
+Benchmarks
+==========
+
+Inquiring minds can checkout the simple benchmarks I've included so you can have an idea of what kind of performance to expect.  I've included some quick scenarios including strings of (100, 1000, 5000, 1000) words and dictionaries of (100, 1000, 5000, 25000, 50000, 100000) words.
+
+You can run the benchmarks via:
+  /test/benchmark/fu-fu_benchmark.rb
+
+
 TODO
 ====
 

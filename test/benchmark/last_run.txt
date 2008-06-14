@@ -1,0 +1,180 @@
+
+100 word dictionary-----
+
+  --100 words string-----
+  Run a single time
+  0.000000   0.000000   0.000000 (  0.000577)
+  Run 50 times
+      user     system      total        real
+  0.030000   0.000000   0.030000 (  0.031742)
+
+  --1000 words string-----
+  Run a single time
+  0.010000   0.000000   0.010000 (  0.005336)
+  Run 50 times
+      user     system      total        real
+  0.310000   0.000000   0.310000 (  0.327047)
+
+  --5000 words string-----
+  Run a single time
+  0.030000   0.000000   0.030000 (  0.032313)
+  Run 50 times
+      user     system      total        real
+  1.570000   0.030000   1.600000 (  1.644811)
+
+  --10000 words string-----
+  Run a single time
+  0.060000   0.000000   0.060000 (  0.059946)
+  Run 50 times
+      user     system      total        real
+  3.070000   0.070000   3.140000 (  3.203320)
+
+1000 word dictionary-----
+
+  --100 words string-----
+  Run a single time
+  0.000000   0.000000   0.000000 (  0.000537)
+  Run 50 times
+      user     system      total        real
+  0.040000   0.000000   0.040000 (  0.045566)
+
+  --1000 words string-----
+  Run a single time
+  0.010000   0.000000   0.010000 (  0.005326)
+  Run 50 times
+      user     system      total        real
+  0.300000   0.000000   0.300000 (  0.312115)
+
+  --5000 words string-----
+  Run a single time
+  0.030000   0.010000   0.040000 (  0.034674)
+  Run 50 times
+      user     system      total        real
+  1.570000   0.020000   1.590000 (  1.645200)
+
+  --10000 words string-----
+  Run a single time
+  0.060000   0.000000   0.060000 (  0.060991)
+  Run 50 times
+      user     system      total        real
+  3.030000   0.060000   3.090000 (  3.147882)
+
+5000 word dictionary-----
+
+  --100 words string-----
+  Run a single time
+  0.000000   0.000000   0.000000 (  0.000551)
+  Run 50 times
+      user     system      total        real
+  0.020000   0.000000   0.020000 (  0.026700)
+
+  --1000 words string-----
+  Run a single time
+  0.000000   0.000000   0.000000 (  0.005253)
+  Run 50 times
+      user     system      total        real
+  0.300000   0.000000   0.300000 (  0.313005)
+
+  --5000 words string-----
+  Run a single time
+  0.040000   0.000000   0.040000 (  0.047909)
+  Run 50 times
+      user     system      total        real
+  1.500000   0.040000   1.540000 (  1.568399)
+
+  --10000 words string-----
+  Run a single time
+  0.070000   0.000000   0.070000 (  0.073416)
+  Run 50 times
+      user     system      total        real
+  3.050000   0.050000   3.100000 (  3.158716)
+
+25000 word dictionary-----
+
+  --100 words string-----
+  Run a single time
+  0.000000   0.000000   0.000000 (  0.000555)
+  Run 50 times
+      user     system      total        real
+  0.030000   0.000000   0.030000 (  0.027366)
+
+  --1000 words string-----
+  Run a single time
+  0.010000   0.000000   0.010000 (  0.005748)
+  Run 50 times
+      user     system      total        real
+  0.320000   0.010000   0.330000 (  0.332482)
+
+  --5000 words string-----
+  Run a single time
+  0.020000   0.000000   0.020000 (  0.027507)
+  Run 50 times
+      user     system      total        real
+  1.580000   0.030000   1.610000 (  1.651881)
+
+  --10000 words string-----
+  Run a single time
+  0.070000   0.000000   0.070000 (  0.077076)
+  Run 50 times
+      user     system      total        real
+  3.220000   0.070000   3.290000 (  3.380633)
+
+50000 word dictionary-----
+
+  --100 words string-----
+  Run a single time
+  0.000000   0.000000   0.000000 (  0.000598)
+  Run 50 times
+      user     system      total        real
+  0.030000   0.000000   0.030000 (  0.028717)
+
+  --1000 words string-----
+  Run a single time
+  0.050000   0.000000   0.050000 (  0.049536)
+  Run 50 times
+      user     system      total        real
+  0.300000   0.000000   0.300000 (  0.316011)
+
+  --5000 words string-----
+  Run a single time
+  0.060000   0.000000   0.060000 (  0.054004)
+  Run 50 times
+      user     system      total        real
+  1.740000   0.030000   1.770000 (  1.810409)
+
+  --10000 words string-----
+  Run a single time
+  0.080000   0.010000   0.090000 (  0.079273)
+  Run 50 times
+      user     system      total        real
+  3.710000   0.070000   3.780000 (  3.830673)
+
+100000 word dictionary-----
+
+  --100 words string-----
+  Run a single time
+  0.000000   0.000000   0.000000 (  0.000618)
+  Run 50 times
+      user     system      total        real
+  0.030000   0.000000   0.030000 (  0.028663)
+
+  --1000 words string-----
+  Run a single time
+  0.000000   0.000000   0.000000 (  0.005420)
+  Run 50 times
+      user     system      total        real
+  0.410000   0.010000   0.420000 (  0.416151)
+
+  --5000 words string-----
+  Run a single time
+  0.020000   0.000000   0.020000 (  0.026926)
+  Run 50 times
+      user     system      total        real
+  1.750000   0.040000   1.790000 (  1.793058)
+
+  --10000 words string-----
+  Run a single time
+  0.050000   0.000000   0.050000 (  0.055301)
+  Run 50 times
+      user     system      total        real
+  3.520000   0.060000   3.580000 (  3.617824)

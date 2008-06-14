@@ -1,3 +1,5 @@
+require "benchmark"
+
 module ProfanityFilter
   def self.included(base)
     base.extend(ClassMethods)
@@ -36,11 +38,11 @@ module ProfanityFilter
     end
 
     def self.clean_word_dictionary(word)
-      DICTIONARY.keys.include?(word.downcase.squeeze) && word.size > 2 ? DICTIONARY[word.downcase.squeeze] : word
+      DICTIONARY.include?(word.downcase.squeeze) && word.size > 2 ? DICTIONARY[word.downcase.squeeze] : word
     end
 
     def self.clean_word_basic(word)
-      DICTIONARY.keys.include?(word.downcase.squeeze) && word.size > 2 ? '@#$%' : word
+      DICTIONARY.include?(word.downcase.squeeze) && word.size > 2 ? '@#$%' : word
     end
   end
 end

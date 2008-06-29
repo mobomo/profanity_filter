@@ -34,7 +34,8 @@ module ProfanityFilter
     DICTIONARY = YAML.load_file(File.join(File.dirname(__FILE__), '../config/dictionary.yml'))
 
     def self.clean(text, replace_method = '')
-      text.split(/(\W)/).collect{|word| replace_method == 'dictionary' ? clean_word_dictionary(word) : clean_word_basic(word)}.join rescue nil
+      return text if text.blank?
+      text.split(/(\W)/).collect{|word| replace_method == 'dictionary' ? clean_word_dictionary(word) : clean_word_basic(word)}.join
     end
 
     def self.clean_word_dictionary(word)

@@ -4,7 +4,7 @@ module ProfanityFilter
   def self.included(base)
     base.extend(ClassMethods)
   end
-  
+
   module ClassMethods
     def profanity_filter!(*attr_names)
       option = attr_names.pop[:method] rescue nil if attr_names.last.is_a?(Hash)
@@ -31,19 +31,28 @@ module ProfanityFilter
   end
   
   class Base
-    DICTIONARY = YAML.load_file(File.join(File.dirname(__FILE__), '../config/dictionary.yml'))
+    cattr_accessor :replacement_text
+    @@replacement_text = '@#$%'
 
-    def self.clean(text, replace_method = '')
-      return text if text.blank?
-      text.split(/(\W)/).collect{|word| replace_method == 'dictionary' ? clean_word_dictionary(word) : clean_word_basic(word)}.join
-    end
+    cattr_accessor :dictionary_file
+    @@dictionary_file = File.join(File.dirname(__FILE__), '../config/dictionary.yml')
 
-    def self.clean_word_dictionary(word)
-      DICTIONARY.include?(word.downcase.squeeze) && word.size > 2 ? DICTIONARY[word.downcase.squeeze] : word
-    end
+    cattr_accessor :dictionary
+    @@dictionary = YAML.load_file(@@dictionary_file)
 
-    def self.clean_word_basic(word)
-      DICTIONARY.include?(word.downcase.squeeze) && word.size > 2 ? '@#$%' : word
+    class << self
+      def clean(text, replace_method = '')
+        return text if text.blank?
+        text.split(/(\W)/).collect{|word| replace_method == 'dictionary' ? clean_word_dictionary(word) : clean_word_basic(word)}.join
+      end
+
+      def clean_word_dictionary(word)
+        dictionary.include?(word.downcase.squeeze) && word.size > 2 ? dictionary[word.downcase.squeeze] : word
+      end
+
+      def clean_word_basic(word)
+        dictionary.include?(word.downcase.squeeze) && word.size > 2 ? replacement_text : word
+      end
     end
   end
 end

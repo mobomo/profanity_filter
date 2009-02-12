@@ -2,6 +2,15 @@
 
 require 'yaml'
 require 'benchmark'
+
+begin
+  require File.dirname(__FILE__) + '/../../../../config/boot'
+  require 'active_support'
+rescue LoadError
+  require 'rubygems'
+  require 'active_support'
+end
+
 require File.join(File.dirname(__FILE__), '../../lib/profanity_filter')
 
 def silently(&block)
@@ -14,7 +23,7 @@ end
 
 %w(100 1000 5000 25000 50000 100000).each do |dictionary_count|
   puts "\n#{dictionary_count} word dictionary-----"
-  silently {ProfanityFilter::Base::DICTIONARY = YAML.load_file(File.join(File.dirname(__FILE__), "dictionary_test_#{dictionary_count}.yml"))}
+  silently {ProfanityFilter::Base.dictionary = YAML.load_file(File.join(File.dirname(__FILE__), "dictionary_test_#{dictionary_count}.yml"))}
   %w(100 1000 5000 10000).each do |word_count|
     puts "\n  --#{word_count} words string-----"
     text = ''

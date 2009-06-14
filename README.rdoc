@@ -2,6 +2,9 @@
 
 This plugin will allow you to filter profanity using basic replacement or a dictionary term.  
 
+== History
+
+
 == Disclaimer
 
 This plugin is provided as is - therefore, the creators and contributors of this plugin are not responsible for any damages that may result from it's usage.  Use at your own risk; backup your data.
@@ -52,4 +55,4 @@ You can run the benchmarks via:
 
 == Resources
 
-Created by Adam Bair (adam@intridea.com) of Intridea (http://www.intridea.com)
+Created by Adam Bair (adam@intridea.com) of Intridea (http://www.intridea.com) in the open source room at RailsConf 2008.

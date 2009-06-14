@@ -1,17 +1,12 @@
-Fu-fu: The Profanity Filter for Rails
-===============
+= Fu-fu: The Profanity Filter for Rails
 
 This plugin will allow you to filter profanity using basic replacement or a dictionary term.  
 
-
-Disclaimer
-=========
+== Disclaimer
 
 This plugin is provided as is - therefore, the creators and contributors of this plugin are not responsible for any damages that may result from it's usage.  Use at your own risk; backup your data.
 
-
-Example
-=======
+== Example
 
 You can use it in your models:
 
@@ -41,22 +36,17 @@ You can also use the filter directly:
   ProfanityFilter::Base.clean(text, 'dictionary')
 
 
-Benchmarks
-==========
+== Benchmarks
 
 Inquiring minds can checkout the simple benchmarks I've included so you can have an idea of what kind of performance to expect.  I've included some quick scenarios including strings of (100, 1000, 5000, 1000) words and dictionaries of (100, 1000, 5000, 25000, 50000, 100000) words.
 
 You can run the benchmarks via:
   /test/benchmark/fu-fu_benchmark.rb
 
-
-TODO
-====
+== TODO
 
 This plugin is not currently filtering words that are punctuation delimited (ex. 'f-u-c-k').
 
-
-Resources
-=========
+== Resources
 
 Created by Adam Bair (adam@intridea.com) of Intridea (http://www.intridea.com)

@@ -8,7 +8,7 @@ This plugin is provided as is - therefore, the creators and contributors of this
 
 == Example
 
-You can use it in your models:
+=== You can use it in your models:
 
 Notice -- there are two profanity filters, one is destructive.  Beware the exclamation point (profanity_filter!).
 
@@ -30,7 +30,7 @@ Destructive (saves the filtered content to the database)
   profanity_filter! :foo, :bar, :method => 'dictionary'
     # banned words will have their vowels replaced
 
-You can also use the filter directly:
+=== You can also use the filter directly:
 
   ProfanityFilter::Base.clean(text)
   ProfanityFilter::Base.clean(text, 'dictionary')

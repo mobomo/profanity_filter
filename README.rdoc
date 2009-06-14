@@ -14,21 +14,21 @@ Notice -- there are two profanity filters, one is destructive.  Beware the excla
 
 Non-Destructive (filters content when called, original text remains in the database)
 
-    profanity_filter :foo, :bar
-      # banned words will be replaced with @#$%
-    profanity_filter :foo, :bar, :method => 'dictionary'
-      # banned words will have their vowels replaced
+  profanity_filter :foo, :bar
+    # banned words will be replaced with @#$%
+  profanity_filter :foo, :bar, :method => 'dictionary'
+    # banned words will have their vowels replaced
 
-    The non-destructive profanity_filter provides different versions of the filtered attribute:
-      some_model.foo => 'filtered version'
-      some_model.foo_original => 'non-filtered version'
+  The non-destructive profanity_filter provides different versions of the filtered attribute:
+    some_model.foo => 'filtered version'
+    some_model.foo_original => 'non-filtered version'
 
 Destructive (saves the filtered content to the database)
 
-    profanity_filter! :foo, :bar
-      # banned words will be replaced with @#$%
-    profanity_filter! :foo, :bar, :method => 'dictionary'
-      # banned words will have their vowels replaced
+  profanity_filter! :foo, :bar
+    # banned words will be replaced with @#$%
+  profanity_filter! :foo, :bar, :method => 'dictionary'
+    # banned words will have their vowels replaced
 
 You can also use the filter directly:
 

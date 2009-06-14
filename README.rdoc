@@ -45,7 +45,10 @@ You can run the benchmarks via:
 
 == TODO
 
-This plugin is not currently filtering words that are punctuation delimited (ex. 'f-u-c-k').
+* This plugin is not currently filtering words that are punctuation delimited (ex. 'f-u-c-k').
+* Turn this into a gem (and move over to rspec)
+* May break ProfanityFilter out on it's own
+* Clean up dictionary implementation and subsitution (suboptimal and messy)
 
 == Resources
 

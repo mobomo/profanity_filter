@@ -31,14 +31,10 @@ module ProfanityFilter
   end
   
   class Base
-    cattr_accessor :replacement_text
+    cattr_accessor :replacement_text, :dictionary_file, :dictionary
     @@replacement_text = '@#$%'
-
-    cattr_accessor :dictionary_file
-    @@dictionary_file = File.join(File.dirname(__FILE__), '../config/dictionary.yml')
-
-    cattr_accessor :dictionary
-    @@dictionary = YAML.load_file(@@dictionary_file)
+    @@dictionary_file  = File.join(File.dirname(__FILE__), '../config/dictionary.yml')
+    @@dictionary       = YAML.load_file(@@dictionary_file)
 
     class << self
       def clean(text, replace_method = '')

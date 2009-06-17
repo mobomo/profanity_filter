@@ -53,6 +53,10 @@ You can run the benchmarks via:
 * May break ProfanityFilter out on it's own
 * Clean up dictionary implementation and subsitution (suboptimal and messy)
 
+== License
+
+Fu-fu: The Profanity Filter for Rails uses the MIT License. Please see the MIT-LICENSE file.
+
 == Resources
 
 Created by Adam Bair (adam@intridea.com) of Intridea (http://www.intridea.com) in the open source room at RailsConf 2008.

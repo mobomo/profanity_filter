@@ -52,6 +52,7 @@ You can run the benchmarks via:
 * Turn this into a gem (and move over to rspec)
 * May break ProfanityFilter out on it's own
 * Clean up dictionary implementation and subsitution (suboptimal and messy)
+* Move benchmarks into a rake task
 
 == License
 

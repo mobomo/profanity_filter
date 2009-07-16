@@ -7,12 +7,12 @@ module ProfanityFilter
 
   module ClassMethods
     def profanity_filter!(*attr_names)
-      option = attr_names.pop[:method] rescue nil if attr_names.last.is_a?(Hash)
+      option = attr_names.pop[:method] if attr_names.last.is_a?(Hash)
       attr_names.each { |attr_name| setup_callbacks_for(attr_name, option) }
     end
     
     def profanity_filter(*attr_names)
-      option = attr_names.pop[:method] rescue nil if attr_names.last.is_a?(Hash)
+      option = attr_names.pop[:method] if attr_names.last.is_a?(Hash)
 
       attr_names.each do |attr_name| 
         instance_eval do

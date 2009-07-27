@@ -2,9 +2,6 @@
 
 This plugin will allow you to filter profanity using basic replacement or a dictionary term.  
 
-== History
-
-
 == Disclaimer
 
 This plugin is provided as is - therefore, the creators and contributors of this plugin are not responsible for any damages that may result from it's usage.  Use at your own risk; backup your data.

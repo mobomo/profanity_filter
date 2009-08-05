@@ -17,7 +17,11 @@ Non-Destructive (filters content when called, original text remains in the datab
   profanity_filter :foo, :bar
     # banned words will be replaced with @#$%
   profanity_filter :foo, :bar, :method => 'dictionary'
+    # banned words will be replaced by value in config/dictionary.yml
+  profanity_filter :foo, :bar, :method => 'vowels'
     # banned words will have their vowels replaced
+  profanity_filter :foo, :bar, :method => 'hollow'
+    # all letters except the first and last will be replaced
 
   The non-destructive profanity_filter provides different versions of the filtered attribute:
     some_model.foo => 'filtered version'
@@ -28,12 +32,20 @@ Destructive (saves the filtered content to the database)
   profanity_filter! :foo, :bar
     # banned words will be replaced with @#$%
   profanity_filter! :foo, :bar, :method => 'dictionary'
+    # banned words will be replaced by value in config/dictionary.yml
+  profanity_filter! :foo, :bar, :method => 'vowels'
     # banned words will have their vowels replaced
+  profanity_filter! :foo, :bar, :method => 'hollow'
+    # all letters except the first and last will be replaced
+
+
 
 === You can also use the filter directly:
 
   ProfanityFilter::Base.clean(text)
   ProfanityFilter::Base.clean(text, 'dictionary')
+  ProfanityFilter::Base.clean(text, 'vowels')
+  ProfanityFilter::Base.clean(text, 'hollow')
 
 
 == Benchmarks
@@ -45,7 +57,6 @@ You can run the benchmarks via:
 
 == TODO
 
-* This plugin is not currently filtering words that are punctuation delimited (ex. 'f-u-c-k').
 * Turn this into a gem (and move over to rspec)
 * May break ProfanityFilter out on it's own
 * Clean up dictionary implementation and subsitution (suboptimal and messy)

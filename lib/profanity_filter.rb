@@ -39,16 +39,43 @@ module ProfanityFilter
     class << self
       def clean(text, replace_method = '')
         return text if text.blank?
-        text.split(/(\W)/).collect{|word| replace_method == 'dictionary' ? clean_word_dictionary(word) : clean_word_basic(word)}.join
+        @replace_method = replace_method
+        text.split(/(\s)/).collect{ |word|
+          clean_word(word)
+        }.join
       end
-
-      def clean_word_dictionary(word)
-        dictionary.include?(word.downcase.squeeze) && word.size > 2 ? dictionary[word.downcase.squeeze] : word
-      end
-
-      def clean_word_basic(word)
-        dictionary.include?(word.downcase.squeeze) && word.size > 2 ? replacement_text : word
-      end
+      
+      def clean_word(word)
+         return word unless(word.strip.size > 2)
+         
+         if word.index(/[\W]/)
+           word = word.split(/(\W)/).collect{ |subword|
+             clean_word(subword)
+           }.join
+           concat = word.gsub(/\W/, '')
+           word = concat if is_banned? concat
+         end
+         
+         is_banned?(word) ? replacement(word) : word
+       end
+       
+       def replacement(word)
+         case @replace_method
+         when 'dictionary'
+           dictionary[word.downcase] || word
+         when 'vowels'
+           word.gsub(/[aeiou]/i, '*')
+         when 'hollow'
+           word[1..word.size-2] = '*' * (word.size-2) if word.size > 2
+           word
+         else
+           replacement_text
+         end
+       end
+       
+       def is_banned?(word = '')
+         dictionary.include?(word.downcase)
+       end
     end
   end
 end

@@ -1,13 +1,8 @@
-# the filter currently checks for squeezed words that start out at 3 or more characters.
-# example - will filter 'ass' and 'aasssss' but not 'as' - still working on a better way to avoid assess TODO - reserved word list.
-# keep in mind, the squeezed version of words (shitter shiter) when adding terms
+# the filter currently checks for words that are 3 or more characters.
 ---
-as: "*ss"
 ass: "*ss"
 asses: "*ss*s"
-ashole: "*ssh*l*"
 asshole: "*ssh*l*"
-asholes: "*ssh*l*s"
 assholes: "*ssh*l*s"
 bastard: b*st*rd
 beastial: b**st**l
@@ -24,7 +19,6 @@ bitching: b*tch*ng
 blowjob: bl*wj*b
 blowjobs: bl*wj*bs
 bullshit: b*llsh*t
-bulshit: b*llsh*t
 clit: cl*t
 cock: c*ck
 cocks: c*cks
@@ -38,7 +32,6 @@ cummer: c*mm*r
 cumming: c*mm*ng
 cums: c*ms
 cumshot: c*msh*t
-cunilingus: c*n*l*ng*s
 cunillingus: c*n*ll*ng*s
 cunnilingus: c*nn*l*ng*s
 cunt: c*nt
@@ -55,6 +48,7 @@ cyberfucking: cyb*rf*ck*ng
 damn: d*mn
 dildo: d*ld*
 dildos: d*ld*s
+dick: d*ck
 dink: d*nk
 dinks: d*nks
 ejaculate: "*j*c*l*t*"

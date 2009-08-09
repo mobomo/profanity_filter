@@ -40,18 +40,14 @@ module ProfanityFilter
       def clean(text, replace_method = '')
         return text if text.blank?
         @replace_method = replace_method
-        text.split(/(\s)/).collect{ |word|
-          clean_word(word)
-        }.join
+        text.split(/(\s)/).collect{ |word| clean_word(word) }.join
       end
       
       def clean_word(word)
          return word unless(word.strip.size > 2)
          
          if word.index(/[\W]/)
-           word = word.split(/(\W)/).collect{ |subword|
-             clean_word(subword)
-           }.join
+           word = word.split(/(\W)/).collect{ |subword| clean_word(subword) }.join
            concat = word.gsub(/\W/, '')
            word = concat if is_banned? concat
          end

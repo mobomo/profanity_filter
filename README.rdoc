@@ -8,7 +8,7 @@ This plugin is provided as is - therefore, the creators and contributors of this
 
 == Install
 
-  ./script/plugin install git@github.com:adambair/fu-fu.git
+  ./script/plugin install git://github.com/adambair/fu-fu.git
 
 == Example
 

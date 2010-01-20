@@ -39,6 +39,9 @@ class BasicProfanityFilterTest < Test::Unit::TestCase
   def test_knows_when_text_is_profane
     assert ProfanityFilter::Base.profane?('fuck')
   end
+  def test_knows_nil_is_not_profane
+    assert !ProfanityFilter::Base.profane?(nil)
+  end
 end
 
 class DictionaryProfanityFilterTest < Test::Unit::TestCase
@@ -74,6 +77,9 @@ class DictionaryProfanityFilterTest < Test::Unit::TestCase
   end
   def test_dictionary_knows_when_text_is_profane
     assert ProfanityFilter::Base.profane?('fuck', 'dictionary')
+  end
+  def test_dictionary_knows_nil_is_not_profane
+    assert !ProfanityFilter::Base.profane?(nil, 'dictionary')
   end
 end
 
@@ -113,6 +119,9 @@ class VowelsProfanityFilterTest < Test::Unit::TestCase
   def test_vowels_knows_when_text_is_profane
     assert ProfanityFilter::Base.profane?('fuck', 'vowels')
   end
+  def test_vowels_knows_nil_is_not_profane
+    assert !ProfanityFilter::Base.profane?(nil, 'vowels')
+  end
 end
 
 class HollowProfanityFilterTest < Test::Unit::TestCase
@@ -149,5 +158,8 @@ class HollowProfanityFilterTest < Test::Unit::TestCase
   end
   def test_hollow_knows_when_text_is_profane
     assert ProfanityFilter::Base.profane?('fuck', 'hollow')
+  end
+  def test_hollow_knows_nil_is_not_profane
+    assert !ProfanityFilter::Base.profane?(nil, 'hollow')
   end
 end

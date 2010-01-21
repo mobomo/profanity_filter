@@ -1,5 +1,3 @@
-require "benchmark"
-
 module ProfanityFilter
   def self.included(base)
     base.extend(ClassMethods)

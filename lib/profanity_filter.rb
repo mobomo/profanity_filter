@@ -35,8 +35,6 @@ module ProfanityFilter
     @@dictionary       = YAML.load_file(@@dictionary_file)
 
     class << self
-      # Returns true if the text includes any profanity. Returns false if
-      # the text would not be changed by #clean
       def profane?(text, replace_method='')
         text != clean(text, replace_method)
       end

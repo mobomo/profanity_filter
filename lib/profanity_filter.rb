@@ -1,6 +1,10 @@
 module ProfanityFilter
   def self.included(base)
-    base.extend(ClassMethods)
+    # base.send :extend, ClassMethods
+      base.class_eval do
+        extend ClassMethods
+      end
+    
   end
 
   module ClassMethods
@@ -74,3 +78,5 @@ module ProfanityFilter
     end
   end
 end
+
+ActiveRecord::Base.send(:include, ProfanityFilter)

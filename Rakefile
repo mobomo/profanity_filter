@@ -2,6 +2,18 @@ require 'rake'
 require 'rake/testtask'
 require 'rake/rdoctask'
 
+require 'jeweler'
+Jeweler::Tasks.new do |gem|
+  gem.name = "profanity_filter"
+  gem.homepage = "http://github.com/intridea/profanity_filter"
+  gem.license = "MIT"
+  gem.summary = %Q{A Rails plugin gem for filtering out profanity.}
+  gem.description = %Q{Allows you to filter profanity using basic replacement or a dictionary term.}
+  gem.email = "adambair@gmail.com"
+  gem.authors = ["Adam Bair"]
+end
+Jeweler::RubygemsDotOrgTasks.new
+
 desc 'Default: run unit tests.'
 task :default => :test
 

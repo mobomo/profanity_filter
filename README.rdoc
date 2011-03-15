@@ -79,3 +79,10 @@ Fu-fu: The Profanity Filter for Rails uses the MIT License. Please see the MIT-L
 == Resources
 
 Created by Adam Bair (adam@intridea.com) of Intridea (http://www.intridea.com) in the open source room at RailsConf 2008.
+
+== Contributors
+
+* Paul Cortens and Greg Benedict - profane? method and tests.
+* Neil Ang - punctionation delimited profanity
+* Flinn Mueller - dynamic word list from method
+* Scott Stewert - additional dictionary words

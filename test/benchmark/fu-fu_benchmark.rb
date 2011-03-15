@@ -1,17 +1,6 @@
 #!/usr/bin/env ruby -wKU
 
-require 'yaml'
-require 'benchmark'
-
-begin
-  require File.dirname(__FILE__) + '/../../../../config/boot'
-  require 'active_support'
-rescue LoadError
-  require 'rubygems'
-  require 'active_support'
-end
-
-require File.join(File.dirname(__FILE__), '../../lib/profanity_filter')
+require File.join(File.dirname(__FILE__), '../test_harness')
 
 def silently(&block)
   warn_level = $VERBOSE
@@ -27,7 +16,8 @@ end
   %w(100 1000 5000 10000).each do |word_count|
     puts "\n  --#{word_count} words string-----"
     text = ''
-    File.open("text_test_#{word_count}.txt", "r") { |f| text = f.read }
+    test_file = File.join(File.dirname(__FILE__), "text_test_#{word_count}.txt")  
+    File.open(test_file, "r") { |f| text = f.read }
     
     puts '  Run a single time'
     puts Benchmark.measure {ProfanityFilter::Base.clean(text)}

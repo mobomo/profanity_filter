@@ -1,7 +1,6 @@
 require 'test/unit'
 require 'rubygems'
 require 'yaml'
-require 'activerecord'
 
 require File.dirname(__FILE__) + '/../lib/profanity_filter'
 

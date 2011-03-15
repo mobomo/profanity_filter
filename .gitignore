@@ -1,4 +1,5 @@
 /coverage
+/pkg
 coverage.data
 /test/*.sqlite*
 /test/*.log

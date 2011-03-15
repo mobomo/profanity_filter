@@ -70,16 +70,6 @@ class DictionaryProfanityFilterTest < Test::Unit::TestCase
     assert_equal 'f*ck', ProfanityFilter::Base.clean('f.u.c.k', 'dictionary')
     assert_equal 'happy-f*ck', ProfanityFilter::Base.clean('happy-fuck', 'dictionary')
   end
-  
-  def test_dictionary_knows_when_text_is_not_profane
-    assert !ProfanityFilter::Base.profane?('happy', 'dictionary')
-  end
-  def test_dictionary_knows_when_text_is_profane
-    assert ProfanityFilter::Base.profane?('fuck', 'dictionary')
-  end
-  def test_dictionary_knows_nil_is_not_profane
-    assert !ProfanityFilter::Base.profane?(nil, 'dictionary')
-  end
 end
 
 
@@ -111,16 +101,6 @@ class VowelsProfanityFilterTest < Test::Unit::TestCase
     assert_equal 'f*ck', ProfanityFilter::Base.clean('f.u.c.k', 'vowels')
     assert_equal 'happy-f*ck', ProfanityFilter::Base.clean('happy-fuck', 'vowels')
   end
-  
-  def test_vowels_knows_when_text_is_not_profane
-    assert !ProfanityFilter::Base.profane?('happy', 'vowels')
-  end
-  def test_vowels_knows_when_text_is_profane
-    assert ProfanityFilter::Base.profane?('fuck', 'vowels')
-  end
-  def test_vowels_knows_nil_is_not_profane
-    assert !ProfanityFilter::Base.profane?(nil, 'vowels')
-  end
 end
 
 class HollowProfanityFilterTest < Test::Unit::TestCase
@@ -150,15 +130,5 @@ class HollowProfanityFilterTest < Test::Unit::TestCase
     assert_equal 'f**k', ProfanityFilter::Base.clean('f-u-c-k', 'hollow')
     assert_equal 'f**k', ProfanityFilter::Base.clean('f.u.c.k', 'hollow')
     assert_equal 'happy-f**k', ProfanityFilter::Base.clean('happy-fuck', 'hollow')
-  end
-  
-  def test_hollow_knows_when_text_is_not_profane
-    assert !ProfanityFilter::Base.profane?('happy', 'hollow')
-  end
-  def test_hollow_knows_when_text_is_profane
-    assert ProfanityFilter::Base.profane?('fuck', 'hollow')
-  end
-  def test_hollow_knows_nil_is_not_profane
-    assert !ProfanityFilter::Base.profane?(nil, 'hollow')
   end
 end

@@ -35,9 +35,10 @@ module ProfanityFilter
     @@dictionary       = YAML.load_file(@@dictionary_file)
 
     class << self
-      def profane?(text, replace_method='')
-        text != clean(text, replace_method)
+      def banned?(word = '')
+        dictionary.include?(word.downcase) if word
       end
+      alias :profane? :banned? 
       
       def clean(text, replace_method = '')
         return text if text.blank?
@@ -51,10 +52,10 @@ module ProfanityFilter
          if word.index(/[\W]/)
            word = word.split(/(\W)/).collect{ |subword| clean_word(subword) }.join
            concat = word.gsub(/\W/, '')
-           word = concat if is_banned? concat
+           word = concat if banned? concat
          end
          
-         is_banned?(word) ? replacement(word) : word
+         banned?(word) ? replacement(word) : word
        end
        
        def replacement(word)
@@ -69,10 +70,6 @@ module ProfanityFilter
          else
            replacement_text
          end
-       end
-       
-       def is_banned?(word = '')
-         dictionary.include?(word.downcase)
        end
     end
   end

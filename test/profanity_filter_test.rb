@@ -132,3 +132,33 @@ class HollowProfanityFilterTest < Test::Unit::TestCase
     assert_equal 'happy-f**k', ProfanityFilter::Base.clean('happy-fuck', 'hollow')
   end
 end
+
+class StarsProfanityFilterTest < Test::Unit::TestCase
+  def test_stars_profanity_filter_does_not_modify_clean_words
+    assert_equal 'happy', ProfanityFilter::Base.clean('happy', 'stars')
+  end
+  
+  def test_stars_profanity_filter_does_not_modify_whitespace
+    assert_equal 'hello  world', ProfanityFilter::Base.clean('hello  world', 'stars')
+    assert_equal "hello \t world", ProfanityFilter::Base.clean("hello \t world", 'stars')
+    assert_equal "hello \n world", ProfanityFilter::Base.clean("hello \n world", 'stars')
+  end
+  
+  def test_stars_profanity_filter_does_not_modify_special_characters
+    assert_equal 'happy  ****', ProfanityFilter::Base.clean('happy  fuck', 'stars')
+    assert_equal 'happy\'s', ProfanityFilter::Base.clean('happy\'s', 'stars')
+    assert_equal '****\'s', ProfanityFilter::Base.clean('fuck\'s', 'stars')
+    assert_equal '****?!', ProfanityFilter::Base.clean('fuck?!', 'stars')
+  end
+  
+  def test_stars_profanity_filter_replaces_profane_words
+    assert_equal '****', ProfanityFilter::Base.clean('fuck', 'stars')
+    assert_equal '****', ProfanityFilter::Base.clean('FUCK', 'stars')
+  end
+  
+  def test_stars_profanity_filter_replaces_punctuation_spaced_profane_words
+    assert_equal '****', ProfanityFilter::Base.clean('f-u-c-k', 'stars')
+    assert_equal '****', ProfanityFilter::Base.clean('f.u.c.k', 'stars')
+    assert_equal 'happy-****', ProfanityFilter::Base.clean('happy-fuck', 'stars')
+  end
+end

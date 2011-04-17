@@ -71,6 +71,8 @@ module ProfanityFilter
          when 'hollow'
            word[1..word.size-2] = '*' * (word.size-2) if word.size > 2
            word
+         when 'stars'
+           word = '*' * (word.size) 
          else
            replacement_text
          end

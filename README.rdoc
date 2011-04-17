@@ -32,6 +32,9 @@ Non-Destructive (filters content when called, original text remains in the datab
   profanity_filter :foo, :bar, :method => 'hollow'
     #=> all letters except the first and last will be replaced
 
+  profanity_filter :foo, :bar, :method => 'stars'
+    #=> all letters will be replaced with *
+
   The non-destructive profanity_filter provides different versions of the filtered attribute:
     some_model.foo => 'filtered version'
     some_model.foo_original => 'non-filtered version'
@@ -49,6 +52,9 @@ Destructive (saves the filtered content to the database)
 
   profanity_filter! :foo, :bar, :method => 'hollow'
     #=> all letters except the first and last will be replaced
+
+  profanity_filter! :foo, :bar, :method => 'stars'
+    #=> all letters will be replaced with *
 
 === You can also use the filter directly:
 
@@ -68,7 +74,6 @@ You can run the benchmarks via:
 
 == TODO
 
-* Turn this into a gem
 * May break ProfanityFilter out on it's own
 * Clean up dictionary implementation and substitution (suboptimal and messy)
 * Move benchmarks into a rake task
@@ -86,3 +91,5 @@ Created by Adam Bair (adam@intridea.com) of Intridea (http://www.intridea.com) i
 * Neil Ang - punctionation delimited profanity
 * Flinn Mueller - dynamic word list from method
 * Scott Stewert - additional dictionary words
+* Nola Stowe - added stars profane filter
+

@@ -35,9 +35,16 @@ class BasicProfanityFilterTest < Test::Unit::TestCase
   def test_knows_when_text_is_not_profane
     assert !ProfanityFilter::Base.profane?('happy')
   end
+
   def test_knows_when_text_is_profane
     assert ProfanityFilter::Base.profane?('fuck')
   end
+
+  # Issue #1 https://github.com/intridea/profanity_filter/issues/1 
+  def test_knows_when_text_contains_profanity
+    assert ProfanityFilter::Base.profane?('oh shit')
+  end
+
   def test_knows_nil_is_not_profane
     assert !ProfanityFilter::Base.profane?(nil)
   end

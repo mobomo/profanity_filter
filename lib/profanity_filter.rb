@@ -42,7 +42,10 @@ module ProfanityFilter
       def banned?(word = '')
         dictionary.include?(word.downcase) if word
       end
-      alias :profane? :banned? 
+
+      def profane?(text = '')
+        text == clean(text) ? false : true
+      end
       
       def clean(text, replace_method = '')
         return text if text.blank?

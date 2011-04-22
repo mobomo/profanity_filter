@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{profanity_filter}
-  s.version = "0.0.1"
+  s.version = "0.0.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Adam Bair"]
-  s.date = %q{2011-04-11}
+  s.date = %q{2011-04-22}
   s.description = %q{Allows you to filter profanity using basic replacement or a dictionary term.}
   s.email = %q{adambair@gmail.com}
   s.extra_rdoc_files = [

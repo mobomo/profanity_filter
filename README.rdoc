@@ -78,6 +78,7 @@ You can run the benchmarks via:
 * Clean up dictionary implementation and substitution (suboptimal and messy)
 * Move benchmarks into a rake task
 * Build out rdocs
+* Ability to supplement the profanity database (with a yaml outside of the gem) via @seankibler
 
 == License
 

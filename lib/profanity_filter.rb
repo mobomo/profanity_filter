@@ -36,9 +36,12 @@ module ProfanityFilter
     cattr_accessor :replacement_text, :dictionary_file, :dictionary
     @@replacement_text = '@#$%'
     @@dictionary_file  = File.join(File.dirname(__FILE__), '../config/dictionary.yml')
-    @@dictionary       = YAML.load_file(@@dictionary_file)
 
     class << self
+      def dictionary
+        @@dictionary ||= YAML.load_file(@@dictionary_file)
+      end
+      
       def banned?(word = '')
         dictionary.include?(word.downcase) if word
       end

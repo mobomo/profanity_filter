@@ -94,4 +94,5 @@ Created by Adam Bair (adam@intridea.com) of Intridea (http://www.intridea.com) i
 * Scott Stewert - additional dictionary words
 * Nola Stowe - added stars filter
 * Nick Wientge - removed dependency on ActiveRecord (now ORM agnostic)
+* Jean Regisser - lazily load the dictionary
 

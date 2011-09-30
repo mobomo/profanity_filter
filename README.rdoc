@@ -92,5 +92,6 @@ Created by Adam Bair (adam@intridea.com) of Intridea (http://www.intridea.com) i
 * Neil Ang - punctionation delimited profanity
 * Flinn Mueller - dynamic word list from method
 * Scott Stewert - additional dictionary words
-* Nola Stowe - added stars profane filter
+* Nola Stowe - added stars filter
+* Nick Wientge - removed dependency on ActiveRecord (now ORM agnostic)
 

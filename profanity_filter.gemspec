@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{profanity_filter}
-  s.version = "0.0.2"
+  s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Adam Bair"]
-  s.date = %q{2011-04-22}
+  s.authors = [%q{Adam Bair}]
+  s.date = %q{2011-09-30}
   s.description = %q{Allows you to filter profanity using basic replacement or a dictionary term.}
   s.email = %q{adambair@gmail.com}
   s.extra_rdoc_files = [
@@ -44,19 +44,10 @@ Gem::Specification.new do |s|
     "test/test_harness.rb"
   ]
   s.homepage = %q{http://github.com/intridea/profanity_filter}
-  s.licenses = ["MIT"]
-  s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.6.2}
+  s.licenses = [%q{MIT}]
+  s.require_paths = [%q{lib}]
+  s.rubygems_version = %q{1.8.8}
   s.summary = %q{A Rails plugin gem for filtering out profanity.}
-  s.test_files = [
-    "test/benchmark/fu-fu_benchmark.rb",
-    "test/benign_filter_test.rb",
-    "test/connection_and_schema.rb",
-    "test/destructive_filter_test.rb",
-    "test/profanity_filter_test.rb",
-    "test/schema.rb",
-    "test/test_harness.rb"
-  ]
 
   if s.respond_to? :specification_version then
     s.specification_version = 3

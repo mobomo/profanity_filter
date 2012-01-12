@@ -79,6 +79,7 @@ You can run the benchmarks via:
 * Move benchmarks into a rake task
 * Build out rdocs
 * Ability to supplement the profanity database (with a yaml outside of the gem) via @seankibler
+* Easy custom blacklists/dictionaries (essentially the same as above)
 
 == License
 

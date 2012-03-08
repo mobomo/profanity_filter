@@ -42,6 +42,11 @@ module ProfanityFilter
         @@dictionary ||= YAML.load_file(@@dictionary_file)
       end
       
+      def append_dictionary( file )
+        dictionary #Insure the dictionary is loaded
+        @@dictionary = @@dictionary.merge(YAML.load_file( file ) )
+      end
+      
       def banned?(word = '')
         dictionary.include?(word.downcase) if word
       end

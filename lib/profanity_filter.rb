@@ -19,8 +19,40 @@ module ProfanityFilter
       attr_names.each do |attr_name|
         instance_eval do
           define_method "#{attr_name}_clean" do; ProfanityFilter::Base.clean(self[attr_name.to_sym], option); end
-          define_method "#{attr_name}_original"do; self[attr_name]; end
+          define_method "#{attr_name}_original" do; self[attr_name]; end
+          define_method "profanity_filtered_attrs" do; attr_names; end
           alias_method attr_name.to_sym, "#{attr_name}_clean".to_sym
+          
+          define_method "unbind_profanity" do
+            profanity_filtered_attrs.each do |attr_name|
+              eval %(
+                class << self
+                  undef_method :#{attr_name}
+                  def #{attr_name}
+                    @attributes[%q(#{attr_name})]
+                  end
+                end
+              )
+            end
+          end
+          define_method "bind_profanity" do
+            profanity_filtered_attrs.each do |attr_name|
+              eval %(
+                class << self
+                  undef_method :#{attr_name}
+                  alias_method :#{attr_name}, :#{attr_name}_clean
+                end
+              )
+            end
+          end
+          
+          #Before and after save does not get triggered until after the attributes have been accessed.
+          #SO... lets override the save method.
+          define_method "save" do |*args|
+            unbind_profanity
+            super(*args)
+            bind_profanity
+          end
         end
       end
     end

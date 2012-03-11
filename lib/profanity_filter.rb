@@ -50,8 +50,9 @@ module ProfanityFilter
           #SO... lets override the save method.
           define_method "save" do |*args|
             unbind_profanity
-            super(*args)
+            result = super(*args)
             bind_profanity
+            return result
           end
         end
       end

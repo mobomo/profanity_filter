@@ -48,6 +48,11 @@ class BasicProfanityFilterTest < Test::Unit::TestCase
   def test_knows_nil_is_not_profane
     assert !ProfanityFilter::Base.profane?(nil)
   end
+  
+  #Issue #7 https://github.com/intridea/profanity_filter/issues/7
+  def test_basic_profanity_filter_catches_racism
+    assert ProfanityFilter::Base.profane?('nigger')
+  end
 end
 
 class DictionaryProfanityFilterTest < Test::Unit::TestCase

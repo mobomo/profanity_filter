@@ -1,5 +1,9 @@
 # the filter currently checks for words that are 3 or more characters.
 ---
+arse: "*rs*"
+arsehole: "*rs*h*l*"
+arseholes: "*rs*h*l*s"
+arses: "*rs*s"
 ass: "*ss"
 asses: "*ss*s"
 asshole: "*ssh*l*"
@@ -49,6 +53,7 @@ damn: d*mn
 dildo: d*ld*
 dildos: d*ld*s
 dick: d*ck
+dickhead: d*ckh**d
 dink: d*nk
 dinks: d*nks
 ejaculate: "*j*c*l*t*"
@@ -89,6 +94,7 @@ fuck: f*ck
 fucked: f*ck*d
 fucker: f*ck*r
 fuckers: f*ck*rs
+fuckface: f*ckf*c*
 fuckin: f*ck*n
 "f++++n": "f*ckn"
 fucking: f*ck*ng

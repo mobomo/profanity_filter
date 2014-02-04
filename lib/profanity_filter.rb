@@ -87,4 +87,4 @@ module ProfanityFilter
   end
 end
 
-ActiveRecord::Base.send(:include, ProfanityFilter) if defined?(ActiveRecord)
+ActiveRecord::Base.send(:include, ProfanityFilter) if defined?(ActiveRecord::Base)

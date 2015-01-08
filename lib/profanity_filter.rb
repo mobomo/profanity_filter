@@ -29,7 +29,12 @@ module ProfanityFilter
                 class << self
                   undef_method :#{attr_name}
                   def #{attr_name}
-                    @attributes[%q(#{attr_name})]
+                    v = @attributes[%q(#{attr_name})]
+                    if v.kind_of?(String)
+                      v
+                    elsif v.respond_to?(:value)
+                      v.value
+                    end
                   end
                 end
               )

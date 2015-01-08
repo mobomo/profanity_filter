@@ -19,8 +19,46 @@ module ProfanityFilter
       attr_names.each do |attr_name|
         instance_eval do
           define_method "#{attr_name}_clean" do; ProfanityFilter::Base.clean(self[attr_name.to_sym], option); end
-          define_method "#{attr_name}_original"do; self[attr_name]; end
+          define_method "#{attr_name}_original" do; self[attr_name]; end
+          define_method "profanity_filtered_attrs" do; attr_names; end
           alias_method attr_name.to_sym, "#{attr_name}_clean".to_sym
+          
+          define_method "unbind_profanity" do
+            profanity_filtered_attrs.each do |attr_name|
+              eval %(
+                class << self
+                  undef_method :#{attr_name}
+                  def #{attr_name}
+                    v = @attributes[%q(#{attr_name})]
+                    if v.kind_of?(String)
+                      v
+                    elsif v.respond_to?(:value)
+                      v.value
+                    end
+                  end
+                end
+              )
+            end
+          end
+          define_method "bind_profanity" do
+            profanity_filtered_attrs.each do |attr_name|
+              eval %(
+                class << self
+                  undef_method :#{attr_name}
+                  alias_method :#{attr_name}, :#{attr_name}_clean
+                end
+              )
+            end
+          end
+          
+          #Before and after save does not get triggered until after the attributes have been accessed.
+          #SO... lets override the save method.
+          define_method "save" do |*args|
+            unbind_profanity
+            result = super(*args)
+            bind_profanity
+            return result
+          end
         end
       end
     end
@@ -40,6 +78,19 @@ module ProfanityFilter
     class << self
       def dictionary
         @@dictionary ||= YAML.load_file(@@dictionary_file)
+      end
+      
+      def append_dictionary( file )
+        @@dictionary = dictionary.merge(YAML.load_file( file ) )
+      end
+      
+      def remove_from_dictionary( file )
+        excluded_words = YAML.load_file( file )
+        if excluded_words
+          dictionary.keep_if do |dictionary_word|
+            !( excluded_words.include?(dictionary_word) )
+          end
+        end
       end
       
       def banned?(word = '')

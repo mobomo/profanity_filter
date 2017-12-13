@@ -1,5 +1,9 @@
 # the filter currently checks for words that are 3 or more characters.
 ---
+arse: "*rs*"
+arsehole: "*rs*h*l*"
+arseholes: "*rs*h*l*s"
+arses: "*rs*s"
 ass: "*ss"
 asses: "*ss*s"
 asshole: "*ssh*l*"
@@ -49,6 +53,7 @@ damn: d*mn
 dildo: d*ld*
 dildos: d*ld*s
 dick: d*ck
+dickhead: d*ckh**d
 dink: d*nk
 dinks: d*nks
 ejaculate: "*j*c*l*t*"
@@ -87,15 +92,27 @@ fistfuckings: f*stf*ck*ngs
 fistfucks: f*stf*cks
 fuck: f*ck
 fucked: f*ck*d
+fucken: f*ck*n
 fucker: f*ck*r
 fuckers: f*ck*rs
+fuckface: f*ckf*c*
 fuckin: f*ck*n
+"f++++n": "f*ckn"
 fucking: f*ck*ng
+"f***ing": "f*ck*ng"
 fuckings: f*ck*ngs
 fuckme: f*ckm*
 fucks: f*cks
 fuk: f*k
 fuks: f*ks
+fuked: f*k*d
+fuken: f*k*n
+fuker: f*k*r
+fukers: f*k*rs
+fukin: f*k*n
+fuking: f*k*ng
+fukings: f*k*ngs
+fukme: f*km*
 gangbang: g*ngb*ng
 gangbanged: g*ngb*ng*d
 gangbangs: g*ngb*ngs
@@ -168,6 +185,8 @@ pising: p*ss*ng
 pissing: p*ss*ng
 pisof: p*ss*ff
 pissoff: p*ss*ff
+poo: p**
+poop: p**p
 porn: p*rn
 porno: p*rn*
 pornography: p*rn*gr*phy

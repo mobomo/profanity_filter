@@ -1,6 +1,7 @@
 require 'rake'
 require 'rake/testtask'
-require 'rake/rdoctask'
+require 'rake/task'
+require 'rdoc/task'
 
 require 'jeweler'
 Jeweler::Tasks.new do |gem|
